@@ -9,6 +9,20 @@
     <style>
         * {
             scroll-behavior: smooth;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         div {
@@ -60,6 +74,9 @@
         nav p {
             color: rgba(255, 255, 255, 0.612);
             font-weight: 250;
+        }
+        .txt {
+            color: #ffffff9c;
         }
 
         nav ul {
@@ -147,6 +164,8 @@
             font-size: 35px;
             font-weight: 250;
             margin: 20px 10px;
+            position: relative;
+            z-index: 2;
         }
 
         /* width */
@@ -175,6 +194,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
+            margin: 0;
         }
 
         .pro-card {
@@ -186,6 +206,11 @@
             flex-direction: column;
             justify-content: space-between;
             border-radius: 20px;
+        }
+
+        .pro-card:nth-child(even) {
+            margin-top: 40px;
+            margin-bottom: -40px;
         }
 
         .pro-attribute-subhead {
@@ -201,12 +226,6 @@
             rotate: 90deg;
             align-items: center;
             width: min-content;
-        }
-
-
-        .pro-card:nth-child(even) {
-            margin-top: 40px;
-            margin-bottom: -40px;
         }
 
         .attribute-text {
@@ -269,6 +288,34 @@
             height: 355px;
             aspect-ratio: 1;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-tag-cloud canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        main section {
+            position: relative;
+            z-index: 2;
+        }
+
+        #section2 {
+            position: relative;
+            z-index: 2;
+            background-color: black;
+        }
+
+        #section2 p {
+            position: relative;
+            z-index: 2;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .contact-container {
@@ -280,57 +327,24 @@
         }
 
         @media screen and (max-width: 804px) {
-
             .the-one-who-got-it-all {
                 display: grid;
                 grid-template-columns: 1fr;
-                max-width: 1000px;
+                max-width: 100%;
+                padding: 20px;
                 margin: 0 auto;
                 gap: 10px;
             }
 
-
             .main-clmn {
-                margin: 0 10px;
-            }
-
-            .xp-card {
-                margin: 10px;
-            }
-
-            .contact-container {
-                margin: 10px;
-            }
-
-            nav {
-                position: relative;
-                top: 0;
-                width: 90%;
-                height: min-content;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-
-            .contact-container {
-                background-color: #262626;
-                border-radius: 20px;
-                padding: 10px;
-                overflow: hidden;
-                margin-bottom: 0;
-            }
-        }
-
-        @media screen and (max-width: 495px) {
-            .main-clmn {
+                margin: 0;
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .pro-card {
+                max-width: 100%;
+                margin: 0;
             }
 
             .pro-card:nth-child(even) {
@@ -338,20 +352,117 @@
                 margin-bottom: 0;
             }
 
-            .pro-card {
-                background-color: #1b1b1b;
-                aspect-ratio: 3/2;
-                padding: 15px;
-                display: flex;
+            nav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            nav h1 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            nav p {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                padding: 0 15px;
+                text-align: justify;
+            }
+
+            .social-main {
+                grid-template-columns: 1fr;
+                width: 100%;
+                justify-items: center;
+            }
+
+            .profile {
                 flex-direction: column;
-                justify-content: space-between;
-                border-radius: 20px;
+                gap: 10px;
+            }
+
+            .mail-id {
+                margin: 5px 0;
+            }
+
+            .skill-tag-cloud {
+                height: 300px;
+                width: 100%;
+                max-width: 355px;
+                margin: 20px auto;
+            }
+
+            .txt {
+                padding: 0 15px;
+                text-align: justify;
+            }
+        }
+
+        @media screen and (max-width: 495px) {
+            .the-one-who-got-it-all {
+                padding: 10px;
+            }
+
+            nav h1 {
+                font-size: 28px;
+            }
+
+            .main-clmn {
+                gap: 15px;
+            }
+
+            .pro-card {
+                aspect-ratio: auto;
+                min-height: 200px;
+            }
+
+            .skill-tag-cloud {
+                height: 250px;
+            }
+
+            .company-details .logo {
+                height: 30px;
+            }
+
+            .company-details h2 {
+                font-size: 18px;
+            }
+
+            main section h3 {
+                font-size: 28px;
+                margin: 15px 5px;
+            }
+
+            .social {
+                font-size: 12px;
+            }
+
+            .social-icon, .openlink {
+                height: 16px;
+            }
+        }
+
+        @media screen and (min-width: 805px) and (max-width: 1024px) {
+            .the-one-who-got-it-all {
+                max-width: 90%;
+                gap: 20px;
+            }
+
+            .pro-card {
+                max-width: 100%;
+            }
+
+            .main-clmn {
+                gap: 15px;
             }
         }
     </style>
 </head>
 
-<body>
+<body style="height: 100vh;">
     <div class="the-one-who-got-it-all">
 
         <nav>
@@ -409,11 +520,22 @@
         <main>
             <section id="section1">
                 <h3>Skills</h3>
-                <div class="skill-tag-cloud"></div>
+                <div class="skill-tag-cloud" style="margin-bottom: 100px;"></div>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
                 <script>
                     const scn = new THREE.Scene(), cam = new THREE.PerspectiveCamera(75, 1, 0.1, 1e3), rndr = new THREE.WebGLRenderer({ antialias: !0 }), grp = new THREE.Group(), ldr = new THREE.TextureLoader(), icons = ['chrome', 'css', 'express', 'figma', 'git', 'github', 'html', 'javascript','mongo', 'nextjs', 'nodejs', 'python', 'react', 'typescript', 'vscode', ].map(i => `asset/${i}.svg`), sps = [], r = 27, s = 6, c = document.querySelector('.skill-tag-cloud');
-                    rndr.setSize(375, 375); c.appendChild(rndr.domElement);
+
+                    function resizeCanvas() {
+                        const width = Math.min(375, c.clientWidth);
+                        const height = width;
+                        rndr.setSize(width, height);
+                        cam.aspect = width / height;
+                        cam.updateProjectionMatrix();
+                    }
+
+                    resizeCanvas();
+                    window.addEventListener('resize', resizeCanvas);
+                    c.appendChild(rndr.domElement);
 
                     icons.forEach((p, i) => ldr.load(p, t => {
                         const phi = Math.acos(-1 + 2 * i / icons.length), theta = Math.sqrt(icons.length * Math.PI) * phi, sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: t }));
@@ -494,7 +616,7 @@
 
             <section id="section2">
                 <h3>Experience</h3>
-                <p>While I haven't worked in a professional environment yet, I've gained hands-on experience through personal projects using technologies like <span style="font-weight: bold; color:greenyellow">React</span>, <span style="font-weight: bold; color:greenyellow">Node.js</span>, <span style="font-weight: bold; color:greenyellow">Express</span>, and <span style="font-weight: bold; color:greenyellow">MongoDB</span>. These projects have helped me understand real-world development workflows, problem-solving, and the importance of writing clean, maintainable code. I'm actively looking for opportunities—internships, freelance work, or entry-level roles—where I can contribute, learn, and grow as a developer.</p>
+                <p class="txt">While I haven't worked in a professional environment yet, I've gained hands-on experience through personal projects using technologies like <span style="font-weight: bold; color:greenyellow">React</span>, <span style="font-weight: bold; color:greenyellow">Node.js</span>, <span style="font-weight: bold; color:greenyellow">Express</span>, and <span style="font-weight: bold; color:greenyellow">MongoDB</span>. These projects have helped me understand real-world development workflows, problem-solving, and the importance of writing clean, maintainable code. I'm actively looking for opportunities—internships, freelance work, or entry-level roles—where I can contribute, learn, and grow as a developer.</p>
             </section>
 
 
