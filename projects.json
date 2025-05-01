@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Job Portal - MERN",
+        "description": "A MERN stack-based job portal with role-specific functionality. Users can apply for jobs, track their application status, and recruiters can manage job postings, accept/reject applications, and view all candidates. Authentication is powered by Clerk, with a user-friendly interface and scalable backend.",
+        "url": "https://job-portal-shozab.vercel.app/",
+        "icon": "asset/job-portal.svg"
+    },
+    {
+        "name": "Imagify - AI Image Generator",
+        "description": "Imagify is an AI-powered image generation SaaS web application built with the MERN stack. It leverages the Clipdrop API to create high-quality, AI-generated images. The app features a secure login/signup system, a user-friendly interface, and seamless integration between the client and server for an enhanced user experience.",
+        "url" : "https://imagify-shozab.vercel.app/",
+        "icon": "asset/imagify.svg"
+    },
+    {
+        "name": "User Authentication",
+        "description": "A secure user authentication system built with the MERN stack, featuring user login/signup, email verification via OTP, and password reset functionality using email OTP. Includes separate client and server setups with environment-specific configurations.",
+        "url": "https://mern-auth-fawn.vercel.app/",
+        "icon": "asset/logo.svg"
+    }
+]
