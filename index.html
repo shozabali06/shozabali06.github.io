@@ -20,6 +20,15 @@
             -webkit-text-size-adjust: 100%;
         }
 
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            height: 100vh;
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -34,14 +43,6 @@
         .fade-in {
             opacity: 1 !important;
             transform: translateY(0) !important;
-        }
-
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            font-family: monospace;
         }
 
         .the-one-who-got-it-all {
@@ -63,20 +64,25 @@
             justify-content: center;
         }
 
-        nav span u {
+        .title-txt {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .txt {
+            color: #ffffff9c;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .highlight-text {
+            font-weight: bold;
             color: white;
         }
 
-        nav h1 {
-            font-size: 40px;
-        }
-
-        nav p {
-            color: rgba(255, 255, 255, 0.612);
-            font-weight: 250;
-        }
-        .txt {
-            color: #ffffff9c;
+        .highlight-text-green {
+            font-weight: bold;
+            color: greenyellow;
         }
 
         nav ul {
@@ -108,13 +114,16 @@
             color: white;
         }
 
-
         .profile {
             display: flex;
             align-items: center;
             margin: 20px 0;
         }
 
+        .profile-pic {
+            height: 50px;
+            border-radius: 50%;
+        }
 
         .mail-id {
             color: #959595;
@@ -128,11 +137,10 @@
             padding-left: 10px;
         }
 
-
         .social-main {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            width: min-content;
+            width: 100%;
         }
 
         .social-icon {
@@ -164,30 +172,39 @@
             font-size: 35px;
             font-weight: 250;
             margin: 20px 10px;
+        }
+
+        .skill-tag-cloud {
+            height: 355px;
+            aspect-ratio: 1;
+            margin: 0 auto 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-tag-cloud canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        main section {
             position: relative;
             z-index: 2;
         }
 
-        /* width */
-        ::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
+        #section2 {
+            position: relative;
+            z-index: 2;
+            background-color: black;
         }
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f100;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
+        #section2 p {
+            position: relative;
+            z-index: 2;
+            background-color: black;
             border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
         }
 
         .main-clmn {
@@ -232,98 +249,13 @@
             color: #959595;
         }
 
-        .xp-card {
-            padding: 15px;
-            background-color: #1b1b1b;
-            border-radius: 20px;
-            color: white;
-            margin: 7px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .xp-card.in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .company-details {
+        .made-with {
             display: flex;
+            font-size: 1.25rem;
+            color: limegreen;
             align-items: center;
-        }
-
-        .company-details .logo {
-            height: 40px;
-        }
-
-        .company-details h2 {
-            font-weight: 200;
-            margin: 10px;
-        }
-
-        .xp-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .xp-head p {
-            font-weight: 100;
-        }
-
-        .xp-card .date {
-            font-size: 14px;
-            color: #c9c9c9;
-        }
-
-        .xp-card ul li {
-            font-weight: 200;
-            list-style: circle;
-            margin: 5px 0;
-            color: #c9c9c9;
-        }
-
-        .skill-tag-cloud {
-            height: 355px;
-            aspect-ratio: 1;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-tag-cloud canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        main section {
-            position: relative;
-            z-index: 2;
-        }
-
-        #section2 {
-            position: relative;
-            z-index: 2;
-            background-color: black;
-        }
-
-        #section2 p {
-            position: relative;
-            z-index: 2;
-            background-color: black;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .contact-container {
-            background-color: #262626;
-            border-radius: 20px;
-            padding: 10px;
-            overflow: hidden;
-            margin-bottom: 25vh;
+            justify-content: center;
+            margin: 20px;
         }
 
         @media screen and (max-width: 804px) {
@@ -359,18 +291,15 @@
                 padding: 20px 0;
                 text-align: center;
             }
-
+            nav p {
+                text-align: left;
+            }
             nav h1 {
                 font-size: 32px;
-                margin-bottom: 15px;
             }
 
             nav p {
                 font-size: 14px;
-                line-height: 1.6;
-                margin-bottom: 20px;
-                padding: 0 15px;
-                text-align: justify;
             }
 
             .social-main {
@@ -394,22 +323,9 @@
                 max-width: 355px;
                 margin: 20px auto;
             }
-
-            .txt {
-                padding: 0 15px;
-                text-align: justify;
-            }
         }
 
         @media screen and (max-width: 495px) {
-            .the-one-who-got-it-all {
-                padding: 10px;
-            }
-
-            nav h1 {
-                font-size: 28px;
-            }
-
             .main-clmn {
                 gap: 15px;
             }
@@ -421,6 +337,10 @@
 
             .skill-tag-cloud {
                 height: 250px;
+            }
+
+            nav h1 {
+                font-size: 28px;
             }
 
             .company-details .logo {
@@ -468,7 +388,7 @@
         <nav>
             <div id="sidebar">
                 <h1 class="title-txt">Hello, World! <br>I'm <span style="color: #ff6a6a;">Shozab</span></h1>
-                <p class="txt">I'm a Computer Science student and self-taught web developer, actively working on improving my skills in full-stack development. I enjoy building clean, functional websites using technologies like <span style="font-weight: bold; color: white;">React</span>, <span style="font-weight: bold; color: white;">Node.js</span>, and <span style="font-weight: bold; color: white;">MongoDB</span>. Right now, I'm focused on learning by doing—building projects, exploring new tools, and staying consistent. I'm also looking for opportunities where I can grow, contribute, and gain real-world experience in a collaborative environment.</p>
+                <p class="txt">I'm a Computer Science student and self-taught <span style="font-weight: bold; color: white;">Full Stack Developer</span>, actively working on improving my skills in full-stack development. I enjoy building clean, functional websites using technologies like <span style="font-weight: bold; color: white;">React</span>, <span style="font-weight: bold; color: white;">Node.js</span>, and <span style="font-weight: bold; color: white;">MongoDB</span>. Right now, I'm focused on learning by doing—building projects, exploring new tools, and staying consistent. I'm also looking for opportunities where I can grow, contribute, and gain real-world experience in a collaborative environment.</p>
 
                 <ul>
                     <li><a class="menu-item active" href="#section1">01&nbsp;
@@ -813,25 +733,34 @@
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             const menuItems = document.querySelectorAll('#sidebar .menu-item');
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section:not([id="section4"]):not([id="section5"])');
 
-            function setActiveMenuItem() {
-                const scrollPosition = window.scrollY;
-
-                sections.forEach(function (section, index) {
-                    const sectionTop = section.offsetTop - 60; // Offset to account for fixed header
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        menuItems.forEach(function (item) {
-                            item.classList.remove('active');
+            // Create an observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Find the index of the section that's in view
+                        const index = Array.from(sections).indexOf(entry.target);
+                        
+                        // Update menu items
+                        menuItems.forEach((item, i) => {
+                            if (i === index) {
+                                item.classList.add('active');
+                            } else {
+                                item.classList.remove('active');
+                            }
                         });
-
-                        menuItems[index].classList.add('active');
                     }
                 });
-            }
-            window.addEventListener('scroll', setActiveMenuItem);
+            }, {
+                threshold: 0.5, // Trigger when 50% of the section is visible
+                rootMargin: '-50px' // Add a small margin to prevent multiple sections being active
+            });
+
+            // Observe each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 
